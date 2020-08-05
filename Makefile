@@ -7,7 +7,7 @@ KERNEL_URL=https://cdn.kernel.org/pub/linux/kernel/$(KERNEL_SERIES)/$(KERNEL_ARC
 all: vmlinuz initramfs
 
 vmlinuz: $(KERNEL_DIRECTORY)
-	cd $(KERNEL_DIRECTORY) && make defconfig && make -j`nproc`
+	cd $(KERNEL_DIRECTORY) && make defconfig -j`nproc` && make -j`nproc`
 	cp $(KERNEL_DIRECTORY)/arch/x86_64/boot/bzImage vmlinuz
 
 $(KERNEL_DIRECTORY):
