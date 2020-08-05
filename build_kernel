@@ -1,0 +1,4 @@
+#!/bin/bash
+
+make defconfig
+make -j`nproc`
