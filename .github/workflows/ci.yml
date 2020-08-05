@@ -20,8 +20,8 @@ jobs:
       run: |
         sudo apt update && sudo apt install build-essential make libelf-dev xorriso grub-common
         make -B all
-        make initfs -B
-        make busylin.iso -B
+        make -B initfs
+        make -B busylin.iso
         
     - name: Upload ISO
       uses: actions/upload-artifact@v2.1.3
