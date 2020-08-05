@@ -7,7 +7,7 @@ KERNEL_URL=https://cdn.kernel.org/pub/linux/kernel/$(KERNEL_SERIES)/$(KERNEL_ARC
 all: vmlinuz initramfs
 
 vmlinuz: $(KERNEL_DIRECTORY)
-	cd $(KERNEL_DIRECTORY) && bash build_kernel
+	cd $(KERNEL_DIRECTORY) && bash ../build_kernel
 	cp $(KERNEL_DIRECTORY)/arch/x86_64/boot/bzImage vmlinuz
 
 $(KERNEL_DIRECTORY):
