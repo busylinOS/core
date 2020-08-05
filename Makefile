@@ -27,13 +27,6 @@ busylin.iso: vmlinuz initramfs
 	mkdir -p iso/boot/grub
 	cp vmlinuz initramfs iso/boot/.
 	grub-mkrescue -o $@ iso
-
-runvm: vmlinuz initramfs
-	qemu-system-x86_64 -m 2048 -kernel vmlinuz -initrd initramfs
-
-runiso: busylin.iso
-	qemu-system-x86_64 -m 2048 -cdrom busylin.iso -boot d
-
 clean:
 	rm -rf vmlinuz initramfs $(KERNEL_DIRECTORY) $(KERNEL_ARCHIVE) \
 	toybox iso/boot/vmlinuz initfs \
