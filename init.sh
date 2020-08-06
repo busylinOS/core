@@ -14,6 +14,7 @@ if ! mountpoint -q dev; then
 fi
 
 sleep 2
-echo "Welcome!"
+echo ""
+echo "Welcome to busylinOS!"
 /bin/sh
 umount /dev/pts /dev /sys /proc
